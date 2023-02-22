@@ -14,6 +14,8 @@ public class BookStoreEntityFrameworkCoreModule : AbpModule
     {
         context.Services.AddAbpDbContext<BookStoreDbContext>(options =>
         {
+            options.AddDefaultRepositories(includeAllEntities: true);
+
                 /* Add custom repositories here. Example:
                  * options.AddRepository<Question, EfCoreQuestionRepository>();
                  */
