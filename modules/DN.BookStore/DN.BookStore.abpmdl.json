@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "DN.BookStore.Domain.Shared": {
+      "path": "src/DN.BookStore.Domain.Shared/DN.BookStore.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "DN.BookStore.Domain": {
+      "path": "src/DN.BookStore.Domain/DN.BookStore.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "DN.BookStore.Application.Contracts": {
+      "path": "src/DN.BookStore.Application.Contracts/DN.BookStore.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "DN.BookStore.Application": {
+      "path": "src/DN.BookStore.Application/DN.BookStore.Application.abppkg.json",
+      "folder": "src"
+    },
+    "DN.BookStore.EntityFrameworkCore": {
+      "path": "src/DN.BookStore.EntityFrameworkCore/DN.BookStore.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "DN.BookStore.MongoDB": {
+      "path": "src/DN.BookStore.MongoDB/DN.BookStore.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "DN.BookStore.HttpApi": {
+      "path": "src/DN.BookStore.HttpApi/DN.BookStore.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "DN.BookStore.HttpApi.Client": {
+      "path": "src/DN.BookStore.HttpApi.Client/DN.BookStore.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "DN.BookStore.TestBase": {
+      "path": "test/DN.BookStore.TestBase/DN.BookStore.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "DN.BookStore.EntityFrameworkCore.Tests": {
+      "path": "test/DN.BookStore.EntityFrameworkCore.Tests/DN.BookStore.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "DN.BookStore.MongoDB.Tests": {
+      "path": "test/DN.BookStore.MongoDB.Tests/DN.BookStore.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "DN.BookStore.Domain.Tests": {
+      "path": "test/DN.BookStore.Domain.Tests/DN.BookStore.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "DN.BookStore.Application.Tests": {
+      "path": "test/DN.BookStore.Application.Tests/DN.BookStore.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "DN.BookStore.HttpApi.Host": {
+      "path": "host/DN.BookStore.HttpApi.Host/DN.BookStore.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "DN.BookStore.Web": {
+      "path": "src/DN.BookStore.Web/DN.BookStore.Web.abppkg.json",
+      "folder": "src"
+    },
+    "DN.BookStore.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/DN.BookStore.HttpApi.Client.ConsoleTestApp/DN.BookStore.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "DN.BookStore.Web.Host": {
+      "path": "host/DN.BookStore.Web.Host/DN.BookStore.Web.Host.abppkg.json",
+      "folder": "host"
+    },
+    "DN.BookStore.AuthServer": {
+      "path": "host/DN.BookStore.AuthServer/DN.BookStore.AuthServer.abppkg.json",
+      "folder": "host"
+    },
+    "DN.BookStore.Host.Shared": {
+      "path": "host/DN.BookStore.Host.Shared/DN.BookStore.Host.Shared.abppkg.json",
+      "folder": "host"
+    },
+    "DN.BookStore.Web.Unified": {
+      "path": "host/DN.BookStore.Web.Unified/DN.BookStore.Web.Unified.abppkg.json",
+      "folder": "host"
+    },
+    "DN.BookStore.Blazor": {
+      "path": "src/DN.BookStore.Blazor/DN.BookStore.Blazor.abppkg.json",
+      "folder": "src"
+    },
+    "DN.BookStore.Blazor.Host": {
+      "path": "host/DN.BookStore.Blazor.Host/DN.BookStore.Blazor.Host.abppkg.json",
+      "folder": "host"
+    },
+    "DN.BookStore.Blazor.Server": {
+      "path": "src/DN.BookStore.Blazor.Server/DN.BookStore.Blazor.Server.abppkg.json",
+      "folder": "src"
+    },
+    "DN.BookStore.Blazor.WebAssembly": {
+      "path": "src/DN.BookStore.Blazor.WebAssembly/DN.BookStore.Blazor.WebAssembly.abppkg.json",
+      "folder": "src"
+    },
+    "DN.BookStore.Blazor.Server.Host": {
+      "path": "host/DN.BookStore.Blazor.Server.Host/DN.BookStore.Blazor.Server.Host.abppkg.json",
+      "folder": "host"
+    }
+  }
+}
