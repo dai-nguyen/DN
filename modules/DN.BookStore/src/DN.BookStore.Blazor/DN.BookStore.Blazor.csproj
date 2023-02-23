@@ -7,11 +7,19 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Volo.Abp.AutoMapper" Version="7.0.1" />
-        <PackageReference Include="Volo.Abp.AspNetCore.Components.Web.Theming" Version="7.0.1" />
+        <PackageReference Include="Volo.Abp.AutoMapper" Version="7.0.2" />
+        <PackageReference Include="Volo.Abp.AspNetCore.Components.Web.Theming" Version="7.0.2" />
     </ItemGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\DN.BookStore.Application.Contracts\DN.BookStore.Application.Contracts.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Update="ConfigureAwait.Fody" Version="3.3.2" />
+      <PackageReference Update="Fody" Version="6.6.4">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+      </PackageReference>
     </ItemGroup>
 </Project>
