@@ -31,7 +31,7 @@ public class BookStoreBlazorModule : AbpModule
 
         Configure<AbpRouterOptions>(options =>
         {
-            options.AdditionalAssemblies.Add(typeof(BookStoreBlazorModule).Assembly);
-        });
+            options.AdditionalAssemblies.Add(typeof(BookStoreBlazorModule).Assembly);            
+        });        
     }
 }

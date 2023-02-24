@@ -21,7 +21,7 @@ namespace DN;
     typeof(AbpSettingManagementApplicationModule)
     )]
 [DependsOn(typeof(BookStoreApplicationModule))]
-    public class DNApplicationModule : AbpModule
+public class DNApplicationModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
