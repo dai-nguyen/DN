@@ -12,7 +12,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="7.0.3" />
     <ProjectReference Include="..\..\src\DN.BookStore.EntityFrameworkCore\DN.BookStore.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\DN.BookStore.TestBase\DN.BookStore.TestBase.csproj" />
-    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="7.0.2" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="7.0.3" />
   </ItemGroup>
 
   <ItemGroup>

@@ -61,10 +61,8 @@ namespace DN.BookStore.Books
         public async Task UpdateAsync(Guid id, CreateUpdateBookDto input)
         {
             var book = await _repository.GetAsync(id);
-
-            book.Name = input.Name;
-            book.Type = input.Type;
-            book.Price = input.Price;
+            
+            ObjectMapper.Map(input, book);
 
             await _repository.UpdateAsync(book);
 
