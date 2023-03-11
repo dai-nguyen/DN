@@ -14,9 +14,9 @@ public class BookStoreApplicationAutoMapperProfile : Profile
         
         CreateMap<Book, BookDto>();
         CreateMap<CreateUpdateBookDto, Book>()
-            .IgnoreAuditedObjectProperties()            
+            .IgnoreAuditedObjectProperties()
             .ForMember(_ => _.ExtraProperties, map => map.Ignore())
             .ForMember(_ => _.Id, map => map.Ignore())
-            .ForMember(_ => _.ConcurrencyStamp, map => map.Ignore());            
+            .ForMember(_ => _.ConcurrencyStamp, map => map.Ignore());
     }
 }

@@ -1,14 +1,14 @@
-﻿using DN.BookStore.Samples;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using Volo.Abp;
 using Volo.Abp.Application.Dtos;
 
 namespace DN.BookStore.Books
 {
+    [Area(BookStoreRemoteServiceConsts.ModuleName)]
+    [RemoteService(Name = BookStoreRemoteServiceConsts.RemoteServiceName)]
+    [Route("api/BookStore/Book")]
     public class BooksController : BookStoreController, IBookAppService
     {
         readonly IBookAppService _bookAppService;
@@ -19,29 +19,34 @@ namespace DN.BookStore.Books
         }
 
         [HttpPost]
-        public async Task<BookDto> CreateAsync(CreateUpdateBookDto dto)
+        public async Task<BookDto> CreateAsync([FromBody] CreateUpdateBookDto dto)
         {
             return await _bookAppService.CreateAsync(dto);
         }
 
+        [HttpDelete]
         public async Task DeleteAsync(Guid id)
         {
             await _bookAppService.DeleteAsync(id);
         }
 
+        [HttpGet]
         public async Task<BookDto> GetAsync(Guid id)
         {
             return await _bookAppService.GetAsync(id);
         }
 
-        public async Task<PagedResultDto<BookDto>> GetListAsync(PagedAndSortedResultRequestDto input)
+        [HttpPost]
+        [Route("GetList")]
+        public async Task<PagedResultDto<BookDto>> GetListAsync(GetBookListDto input)
         {
             return await _bookAppService.GetListAsync(input);
         }
 
-        public async Task<BookDto> UpdateAsync(Guid id, CreateUpdateBookDto input)
+        [HttpPut]
+        public async Task UpdateAsync(Guid id, [FromBody] CreateUpdateBookDto input)
         {
-            return await _bookAppService.UpdateAsync(id, input);
+            await _bookAppService.UpdateAsync(id, input);
         }
     }
 }
