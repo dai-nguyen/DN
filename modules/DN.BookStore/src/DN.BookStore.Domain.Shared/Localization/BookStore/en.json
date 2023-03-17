@@ -34,6 +34,8 @@
     "Enum:BookType.Horror": "Horror",
     "Enum:BookType.Science": "Science",
     "Enum:BookType.ScienceFiction": "Science fiction",
-    "Enum:BookType.Poetry": "Poetry"
+    "Enum:BookType.Poetry": "Poetry",
+    "BookDeletionConfirmationMessage": "Are you sure to delete the book '{0}'?",
+    "BookStore:00001": "There is already an author with the same name: {name}"
   }
 }
