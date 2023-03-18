@@ -1,4 +1,5 @@
-﻿using DN.BookStore.Books;
+﻿using DN.BookStore.Authors;
+using DN.BookStore.Books;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
@@ -13,6 +14,7 @@ public class BookStoreDbContext : AbpDbContext<BookStoreDbContext>, IBookStoreDb
      */
 
     public DbSet<Book> Books { get; set; }
+    public DbSet<Author> Authors { get; set; }
 
     public BookStoreDbContext(DbContextOptions<BookStoreDbContext> options)
         : base(options)

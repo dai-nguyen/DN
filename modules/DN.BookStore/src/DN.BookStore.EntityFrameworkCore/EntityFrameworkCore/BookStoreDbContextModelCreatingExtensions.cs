@@ -1,4 +1,5 @@
-﻿using DN.BookStore.Books;
+﻿using DN.BookStore.Authors;
+using DN.BookStore.Books;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
 using Volo.Abp.EntityFrameworkCore.Modeling;
@@ -17,7 +18,20 @@ public static class BookStoreDbContextModelCreatingExtensions
             b.ToTable(BookStoreDbProperties.DbTablePrefix + "Books",
                 BookStoreDbProperties.DbSchema);
             b.ConfigureByConvention(); //auto configure for the base class props
-            b.Property(x => x.Name).IsRequired().HasMaxLength(128);
+            b.Property(x => x.Name)
+                .IsRequired()
+                .HasMaxLength(128);
+        });
+
+        builder.Entity<Author>(b =>
+        {
+            b.ToTable(BookStoreDbProperties.DbTablePrefix + "Authors",
+                BookStoreDbProperties.DbSchema);
+            b.ConfigureByConvention();
+            b.Property(x => x.Name)
+                .IsRequired()
+                .HasMaxLength(AuthorConsts.MaxNameLength);
+            b.HasIndex(x => x.Name);
         });
 
         /* Configure all entities here. Example:
