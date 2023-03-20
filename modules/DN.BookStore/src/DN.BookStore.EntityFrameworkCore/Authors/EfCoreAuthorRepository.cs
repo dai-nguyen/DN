@@ -10,9 +10,9 @@ using Volo.Abp.EntityFrameworkCore;
 
 namespace DN.BookStore.Authors
 {
-    public class EfCoreBookRepository : EfCoreRepository<BookStoreDbContext, Author, Guid>, IAuthorRepository
+    public class EfCoreAuthorRepository : EfCoreRepository<BookStoreDbContext, Author, Guid>, IAuthorRepository
     {
-        public EfCoreBookRepository(
+        public EfCoreAuthorRepository(
             IDbContextProvider<BookStoreDbContext> dbContextProvider)
             : base(dbContextProvider)
         { }

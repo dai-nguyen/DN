@@ -8,7 +8,7 @@ namespace DN.BookStore.Books
 {
     [Area(BookStoreRemoteServiceConsts.ModuleName)]
     [RemoteService(Name = BookStoreRemoteServiceConsts.RemoteServiceName)]
-    [Route("api/BookStore/Book")]
+    [Route("api/BookStore/Books")]
     public class BooksController : BookStoreController, IBookAppService
     {
         readonly IBookAppService _bookAppService;
@@ -19,9 +19,9 @@ namespace DN.BookStore.Books
         }
 
         [HttpPost]
-        public async Task<BookDto> CreateAsync([FromBody] CreateUpdateBookDto dto)
+        public async Task<BookDto> CreateAsync([FromBody] CreateUpdateBookDto input)
         {
-            return await _bookAppService.CreateAsync(dto);
+            return await _bookAppService.CreateAsync(input);
         }
 
         [HttpDelete]

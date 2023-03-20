@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using DN.BookStore.Authors;
 using DN.BookStore.Books;
 
 namespace DN.BookStore.Blazor;
@@ -12,5 +13,6 @@ public class BookStoreBlazorAutoMapperProfile : Profile
          * into multiple profile classes for a better organization. */
 
         CreateMap<BookDto, CreateUpdateBookDto>();
+        CreateMap<AuthorDto, UpdateAuthorDto>();
     }
 }

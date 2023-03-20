@@ -11,5 +11,5 @@ namespace DN.BookStore;
     )]
 public class BookStoreApplicationContractsModule : AbpModule
 {
-
+    
 }

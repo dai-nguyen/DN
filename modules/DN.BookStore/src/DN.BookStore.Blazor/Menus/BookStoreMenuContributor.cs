@@ -31,6 +31,14 @@ public class BookStoreMenuContributor : IMenuContributor
                 )
             );
 
+        context.Menu.AddItem(
+        new ApplicationMenuItem(
+            "BooksStore.Authors",
+            l["Menu:Authors"],
+            url: "/authors"            
+        )
+    );
+
         //context.Menu.AddItem(
         //    new ApplicationMenuItem(
         //        "BooksStore",
