@@ -13,7 +13,9 @@ public class BookStoreApplicationAutoMapperProfile : Profile
          * Alternatively, you can split your mapping configurations
          * into multiple profile classes for a better organization. */
         
-        CreateMap<Book, BookDto>();
+        CreateMap<Book, BookDto>()
+            .ForMember(_ => _.AuthorName, map => map.Ignore());
+
         CreateMap<CreateUpdateBookDto, Book>()
             .IgnoreAuditedObjectProperties()
             .ForMember(_ => _.ExtraProperties, map => map.Ignore())
@@ -32,5 +34,7 @@ public class BookStoreApplicationAutoMapperProfile : Profile
             .ForMember(_ => _.ExtraProperties, map => map.Ignore())
             .ForMember(_ => _.Id, map => map.Ignore())
             .ForMember(_ => _.ConcurrencyStamp, map => map.Ignore());
+
+        CreateMap<Author, AuthorLookupDto>();
     }
 }

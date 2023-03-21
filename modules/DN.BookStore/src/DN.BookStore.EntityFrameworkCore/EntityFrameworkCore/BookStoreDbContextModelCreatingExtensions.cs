@@ -21,6 +21,7 @@ public static class BookStoreDbContextModelCreatingExtensions
             b.Property(x => x.Name)
                 .IsRequired()
                 .HasMaxLength(128);
+            b.HasOne<Author>().WithMany().HasForeignKey(_ => _.AuthorId).IsRequired();
         });
 
         builder.Entity<Author>(b =>
