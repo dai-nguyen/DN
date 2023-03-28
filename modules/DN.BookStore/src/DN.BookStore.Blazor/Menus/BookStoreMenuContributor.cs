@@ -19,25 +19,41 @@ public class BookStoreMenuContributor : IMenuContributor
         var l = context.GetLocalizer<BookStoreResource>();
 
         //Add main menu items.
-        //context.Menu.AddItem(
-        //    new ApplicationMenuItem(BookStoreMenus.Prefix, displayName: "BookStore", "/BookStore", icon: "fa fa-globe"));
-
         context.Menu.AddItem(
+            new ApplicationMenuItem(
+                BookStoreMenus.Prefix, 
+                displayName: "Book Store", 
+                icon: "fa fa-book")
+            .AddItem(
                 new ApplicationMenuItem(
                     "BooksStore.Books",
                     l["Menu:Books"],
-                    url: "/books",
-                    icon: "fa fa-book"
+                    url: "/books"
                 )
-            );
+            )
+            .AddItem(
+                new ApplicationMenuItem(
+                "BooksStore.Authors",
+                l["Menu:Authors"],
+                url: "/authors"
+            )));
 
-        context.Menu.AddItem(
-        new ApplicationMenuItem(
-            "BooksStore.Authors",
-            l["Menu:Authors"],
-            url: "/authors"            
-        )
-    );
+        //context.Menu.AddItem(
+        //        new ApplicationMenuItem(
+        //            "BooksStore.Books",
+        //            l["Menu:Books"],
+        //            url: "/books",
+        //            icon: "fa fa-book"
+        //        )
+        //    );
+
+        //context.Menu.AddItem(
+        //new ApplicationMenuItem(
+        //    "BooksStore.Authors",
+        //    l["Menu:Authors"],
+        //    url: "/authors"            
+        //)
+        //);
 
         //context.Menu.AddItem(
         //    new ApplicationMenuItem(

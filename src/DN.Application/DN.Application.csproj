@@ -13,12 +13,12 @@
   <ProjectReference Include="..\..\modules\DN.BookStore\src\DN.BookStore.Application\DN.BookStore.Application.csproj" /></ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Account.Application" Version="7.0.3" />
-    <PackageReference Include="Volo.Abp.Identity.Application" Version="7.0.3" />
-    <PackageReference Include="Volo.Abp.PermissionManagement.Application" Version="7.0.3" />
-    <PackageReference Include="Volo.Abp.TenantManagement.Application" Version="7.0.3" />
-    <PackageReference Include="Volo.Abp.FeatureManagement.Application" Version="7.0.3" />
-    <PackageReference Include="Volo.Abp.SettingManagement.Application" Version="7.0.3" />
+    <PackageReference Include="Volo.Abp.Account.Application" Version="7.1.0" />
+    <PackageReference Include="Volo.Abp.Identity.Application" Version="7.1.0" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Application" Version="7.1.0" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Application" Version="7.1.0" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Application" Version="7.1.0" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Application" Version="7.1.0" />
   </ItemGroup>
 
 </Project>

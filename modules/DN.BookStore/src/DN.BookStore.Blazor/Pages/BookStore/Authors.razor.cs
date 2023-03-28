@@ -1,16 +1,15 @@
-﻿using Blazorise.DataGrid;
-using Blazorise;
+﻿using Blazorise;
+using Blazorise.DataGrid;
 using DN.BookStore.Authors;
 using DN.BookStore.Permissions;
 using Microsoft.AspNetCore.Authorization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 
-namespace DN.BookStore.Blazor.Pages
+namespace DN.BookStore.Blazor.Pages.BookStore
 {
     public partial class Authors
     {

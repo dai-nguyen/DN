@@ -16,10 +16,13 @@
                 <h2>@L["Books"]</h2>
             </Column>
             <Column ColumnSize="ColumnSize.IsAuto">
-                <Button Color="Color.Primary"
-                        Clicked="OpenCreateBookModalAsync">
-                    @L["NewBook"]
-                </Button>
+                @if (CanCreateBook)
+                {
+                    <Button Color="Color.Primary"
+                            Clicked="OpenCreateBookModalAsync">
+                        @L["NewBook"]
+                    </Button>
+                }
             </Column>
         </Row>
     </CardHeader>
@@ -44,15 +47,18 @@
                                 @L["Actions"]
                             </DropdownToggle>
                             <DropdownMenu>
-                                
+                                @if (CanEditBook)
+                                {
                                     <DropdownItem Clicked="() => OpenEditBookModalAsync(context)">
                                         @L["Edit"]
                                     </DropdownItem>
-                                
+                                }
+                                @if (CanDeleteBook)
+                                {
                                     <DropdownItem Clicked="() => DeleteBookAsync(context)">
                                         @L["Delete"]
                                     </DropdownItem>
-                                
+                                }
                             </DropdownMenu>
                         </Dropdown>
                     </DisplayTemplate>
@@ -61,6 +67,9 @@
                 <DataGridColumn TItem="BookDto"
                                 Field="@nameof(BookDto.Name)"
                                 Caption="@L["Name"]"></DataGridColumn>
+                <DataGridColumn TItem="BookDto"
+                    Field="@nameof(BookDto.AuthorName)"
+                    Caption="@L["Author"]"></DataGridColumn>
                 <DataGridColumn TItem="BookDto"
                                 Field="@nameof(BookDto.Type)"
                                 Caption="@L["Type"]">
@@ -111,6 +120,17 @@
                             </TextEdit>
                         </Field>
                     </Validation>
+                    <Field>
+                        <FieldLabel>@L["Author"]</FieldLabel>
+                        <Select TValue="Guid" @bind-SelectedValue="@NewBook.AuthorId">
+                            @foreach (var author in AuthorList)
+                            {
+                                <SelectItem TValue="Guid" Value="@author.Id">
+                                    @author.Name
+                                </SelectItem>
+                            }
+                        </Select>
+                    </Field>
                     <Field>
                         <FieldLabel>@L["Type"]</FieldLabel>
                         <Select TValue="BookType" @bind-SelectedValue="@NewBook.Type">
@@ -166,6 +186,17 @@
                             </TextEdit>
                         </Field>
                     </Validation>
+                    <Field>
+                        <FieldLabel>@L["Author"]</FieldLabel>
+                        <Select TValue="Guid" @bind-SelectedValue="@EditingBook.AuthorId">
+                            @foreach (var author in AuthorList)
+                            {
+                                <SelectItem TValue="Guid" Value="@author.Id">
+                                    @author.Name
+                                </SelectItem>
+                            }
+                        </Select>
+                    </Field>
                     <Field>
                         <FieldLabel>@L["Type"]</FieldLabel>
                         <Select TValue="BookType" @bind-SelectedValue="@EditingBook.Type">

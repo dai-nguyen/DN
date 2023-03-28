@@ -1,15 +1,16 @@
 ﻿using DN.BookStore.Authors;
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
-using Volo.Abp.Application.Dtos;
-using Volo.Abp.Domain.Repositories;
 using System.Linq;
 using System.Linq.Dynamic.Core;
+using System.Threading.Tasks;
+using Volo.Abp.Application.Dtos;
 using Volo.Abp.Domain.Entities;
+using Volo.Abp.Features;
 
 namespace DN.BookStore.Books
 {
+    //[RequiresFeature("BookStore.Book")]
     public class BookAppService : BookStoreAppService, IBookAppService
     {
         readonly IBookRepository _repository;

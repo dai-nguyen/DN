@@ -1,26 +1,34 @@
 ﻿using Blazorise;
 using Blazorise.DataGrid;
 using DN.BookStore.Books;
+using DN.BookStore.Permissions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Volo.Abp;
 using Volo.Abp.Application.Dtos;
 
-namespace DN.BookStore.Blazor.Pages
+namespace DN.BookStore.Blazor.Pages.BookStore
 {
     public partial class Books
     {
         [Inject] protected IBookAppService AppService { get; set; }        
         
         private IReadOnlyList<BookDto> BookList { get; set; }
+        IReadOnlyList<AuthorLookupDto> AuthorList = Array.Empty<AuthorLookupDto>();
 
         private int PageSize { get; } = LimitedResultRequestDto.DefaultMaxResultCount;
         private int CurrentPage { get; set; }
         private string CurrentSorting { get; set; }
         private int TotalCount { get; set; }
         
+        private bool CanCreateBook { get; set; }
+        private bool CanEditBook { get; set; }
+        private bool CanDeleteBook { get; set; }
+
         private CreateUpdateBookDto NewBook { get; set; }
 
         private Guid EditingBookId { get; set; }
@@ -41,6 +49,20 @@ namespace DN.BookStore.Blazor.Pages
         protected override async Task OnInitializedAsync()
         {
             await GetBooksAsync();
+            var res = await AppService.GetAuthorLookupAsync();
+
+            if (res != null)
+                AuthorList = res.Items;
+        }
+
+        private async Task SetPermissionsAsync()
+        {
+            CanCreateBook = await AuthorizationService
+                .IsGrantedAsync(BookStorePermissions.Books.Create);
+            CanEditBook = await AuthorizationService
+                .IsGrantedAsync(BookStorePermissions.Books.Edit);
+            CanDeleteBook = await AuthorizationService
+                .IsGrantedAsync(BookStorePermissions.Books.Delete);
         }
 
         private async Task GetBooksAsync()
@@ -71,9 +93,16 @@ namespace DN.BookStore.Blazor.Pages
 
         private async Task OpenCreateBookModalAsync()
         {
+            if (!AuthorList.Any())
+            {
+                throw new UserFriendlyException(message: L["AnAuthorIsRequiredForCreatingBook"]);
+            }
+
             await CreateValidationsRef.ClearAll();
 
             NewBook = new CreateUpdateBookDto();
+            NewBook.AuthorId = AuthorList.First().Id;
+
             await CreateBookModal.Show();
         }
 

@@ -36,6 +36,13 @@ namespace DN.BookStore.Books
             return await _bookAppService.GetAsync(id);
         }
 
+        [HttpGet]
+        [Route("GetAuthorLookup")]
+        public async Task<ListResultDto<AuthorLookupDto>> GetAuthorLookupAsync()
+        {
+            return await _bookAppService.GetAuthorLookupAsync();
+        }
+
         [HttpPost]
         [Route("GetList")]
         public async Task<PagedResultDto<BookDto>> GetListAsync(GetBookListDto input)
