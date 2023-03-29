@@ -1,5 +1,6 @@
 ﻿using DN.BookStore.Localization;
 using System.Threading.Tasks;
+using Volo.Abp.GlobalFeatures;
 using Volo.Abp.UI.Navigation;
 
 namespace DN.BookStore.Blazor.Menus;
@@ -18,57 +19,30 @@ public class BookStoreMenuContributor : IMenuContributor
     {
         var l = context.GetLocalizer<BookStoreResource>();
 
-        //Add main menu items.
-        context.Menu.AddItem(
-            new ApplicationMenuItem(
-                BookStoreMenus.Prefix, 
-                displayName: "Book Store", 
-                icon: "fa fa-book")
-            .AddItem(
+        if (GlobalFeatureManager.Instance.IsEnabled("BookStore.Book")
+            && GlobalFeatureManager.Instance.IsEnabled("BookStore.Author"))
+        {
+            //Add main menu items.
+            context.Menu.AddItem(
                 new ApplicationMenuItem(
-                    "BooksStore.Books",
-                    l["Menu:Books"],
-                    url: "/books"
+                    BookStoreMenus.Prefix,
+                    displayName: "Book Store",
+                    icon: "fa fa-book")
+                .AddItem(
+                    new ApplicationMenuItem(
+                        "BooksStore.Books",
+                        l["Menu:Books"],
+                        url: "/books"
+                    )
                 )
-            )
-            .AddItem(
-                new ApplicationMenuItem(
-                "BooksStore.Authors",
-                l["Menu:Authors"],
-                url: "/authors"
-            )));
-
-        //context.Menu.AddItem(
-        //        new ApplicationMenuItem(
-        //            "BooksStore.Books",
-        //            l["Menu:Books"],
-        //            url: "/books",
-        //            icon: "fa fa-book"
-        //        )
-        //    );
-
-        //context.Menu.AddItem(
-        //new ApplicationMenuItem(
-        //    "BooksStore.Authors",
-        //    l["Menu:Authors"],
-        //    url: "/authors"            
-        //)
-        //);
-
-        //context.Menu.AddItem(
-        //    new ApplicationMenuItem(
-        //        "BooksStore",
-        //        l["Menu:BookStore"],
-        //        icon: "fa fa-book"
-        //    ).AddItem(
-        //        new ApplicationMenuItem(
-        //            "BooksStore.Books",
-        //            l["Menu:Books"],
-        //            url: "/books"
-        //        )
-        //    )
-        //);
-
+                .AddItem(
+                    new ApplicationMenuItem(
+                    "BooksStore.Authors",
+                    l["Menu:Authors"],
+                    url: "/authors"
+                )));
+        }
+        
         return Task.CompletedTask;
     }
 }

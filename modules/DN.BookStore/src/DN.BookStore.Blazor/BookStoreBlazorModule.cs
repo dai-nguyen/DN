@@ -1,9 +1,11 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using DN.BookStore.Blazor.Menus;
+﻿using DN.BookStore.Blazor.Menus;
+using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.AspNetCore.Components.Web.Theming;
 using Volo.Abp.AspNetCore.Components.Web.Theming.Routing;
 using Volo.Abp.AutoMapper;
+using Volo.Abp.GlobalFeatures;
 using Volo.Abp.Modularity;
+using Volo.Abp.Threading;
 using Volo.Abp.UI.Navigation;
 
 namespace DN.BookStore.Blazor;
@@ -15,6 +17,18 @@ namespace DN.BookStore.Blazor;
     )]
 public class BookStoreBlazorModule : AbpModule
 {
+    private static readonly OneTimeRunner OneTimeRunner = new OneTimeRunner();
+    public override void PreConfigureServices(ServiceConfigurationContext context)
+    {
+        base.PreConfigureServices(context);
+
+        OneTimeRunner.Run(() =>
+        {
+            GlobalFeatureManager.Instance.Enable("BookStore.Book");
+            GlobalFeatureManager.Instance.Enable("BookStore.Author");
+        });
+    }
+
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
         context.Services.AddAutoMapperObjectMapper<BookStoreBlazorModule>();

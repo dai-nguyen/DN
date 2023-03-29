@@ -48,6 +48,7 @@ namespace DN.BookStore.Blazor.Pages.BookStore
 
         protected override async Task OnInitializedAsync()
         {
+            await SetPermissionsAsync();
             await GetBooksAsync();
             var res = await AppService.GetAuthorLookupAsync();
 

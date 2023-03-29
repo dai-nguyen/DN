@@ -3,9 +3,11 @@ using System;
 using System.Threading.Tasks;
 using Volo.Abp;
 using Volo.Abp.Application.Dtos;
+using Volo.Abp.GlobalFeatures;
 
 namespace DN.BookStore.Books
 {
+    [RequiresGlobalFeature("BookStore.Author")]
     [Area(BookStoreRemoteServiceConsts.ModuleName)]
     [RemoteService(Name = BookStoreRemoteServiceConsts.RemoteServiceName)]
     [Route("api/BookStore/Books")]

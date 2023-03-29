@@ -6,11 +6,11 @@ using System.Linq.Dynamic.Core;
 using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Domain.Entities;
-using Volo.Abp.Features;
+using Volo.Abp.GlobalFeatures;
 
 namespace DN.BookStore.Books
 {
-    //[RequiresFeature("BookStore.Book")]
+    [GlobalFeatureName("BookStore.Book")]
     public class BookAppService : BookStoreAppService, IBookAppService
     {
         readonly IBookRepository _repository;

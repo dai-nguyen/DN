@@ -2,6 +2,8 @@
 using Volo.Abp.AutoMapper;
 using Volo.Abp.Modularity;
 using Volo.Abp.Application;
+using Volo.Abp.Threading;
+using Volo.Abp.GlobalFeatures;
 
 namespace DN.BookStore;
 
@@ -13,8 +15,20 @@ namespace DN.BookStore;
     )]
 public class BookStoreApplicationModule : AbpModule
 {
-    public override void ConfigureServices(ServiceConfigurationContext context)
+    private static readonly OneTimeRunner OneTimeRunner = new OneTimeRunner();
+    public override void PreConfigureServices(ServiceConfigurationContext context)
     {
+        base.PreConfigureServices(context);
+
+        OneTimeRunner.Run(() =>
+        {
+            GlobalFeatureManager.Instance.Enable("BookStore.Book");
+            GlobalFeatureManager.Instance.Enable("BookStore.Author");
+        });
+    }
+
+    public override void ConfigureServices(ServiceConfigurationContext context)
+    {        
         context.Services.AddAutoMapperObjectMapper<BookStoreApplicationModule>();
         Configure<AbpAutoMapperOptions>(options =>
         {

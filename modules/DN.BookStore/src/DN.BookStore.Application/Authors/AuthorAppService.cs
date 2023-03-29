@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Domain.Repositories;
-using Volo.Abp.Features;
+using Volo.Abp.GlobalFeatures;
 
 namespace DN.BookStore.Authors
 {
-    //[RequiresFeature("BookStore.Author")]
+    [GlobalFeatureName("BookStore.Author")]
     public class AuthorAppService : BookStoreAppService, IAuthorAppService
     {
         readonly IAuthorRepository _authorRepository;
