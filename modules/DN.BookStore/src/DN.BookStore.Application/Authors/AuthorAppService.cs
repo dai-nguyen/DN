@@ -20,7 +20,7 @@ namespace DN.BookStore.Authors
             _authorRepository = authorRepository;
             _authorManager = authorManager;
         }
-
+        
         public async Task<AuthorDto> CreateAsync(CreateAuthorDto input)
         {
             var author = await _authorManager.CreateAsync(
@@ -32,7 +32,7 @@ namespace DN.BookStore.Authors
 
             return ObjectMapper.Map<Author, AuthorDto>(author);
         }
-
+        
         public async Task DeleteAsync(Guid id)
         {
             await _authorRepository.DeleteAsync(id);
@@ -65,7 +65,7 @@ namespace DN.BookStore.Authors
             return new PagedResultDto<AuthorDto>(totalCount, 
                 ObjectMapper.Map<List<Author>, List<AuthorDto>>(authors));
         }
-
+        
         public async Task UpdateAsync(Guid id, UpdateAuthorDto input)
         {
             var author = await _authorRepository.GetAsync(id);

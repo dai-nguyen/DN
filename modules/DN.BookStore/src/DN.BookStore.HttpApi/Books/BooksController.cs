@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DN.BookStore.Permissions;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 using Volo.Abp;
@@ -7,7 +9,8 @@ using Volo.Abp.GlobalFeatures;
 
 namespace DN.BookStore.Books
 {
-    [RequiresGlobalFeature("BookStore.Author")]
+    [Authorize(BookStorePermissions.Books.Default)]
+    [RequiresGlobalFeature("BookStore.Book")]
     [Area(BookStoreRemoteServiceConsts.ModuleName)]
     [RemoteService(Name = BookStoreRemoteServiceConsts.RemoteServiceName)]
     [Route("api/BookStore/Books")]
@@ -20,12 +23,14 @@ namespace DN.BookStore.Books
             _bookAppService = bookAppService;
         }
 
+        [Authorize(BookStorePermissions.Books.Create)]
         [HttpPost]
         public async Task<BookDto> CreateAsync([FromBody] CreateUpdateBookDto input)
         {
             return await _bookAppService.CreateAsync(input);
         }
 
+        [Authorize(BookStorePermissions.Books.Delete)]
         [HttpDelete]
         public async Task DeleteAsync(Guid id)
         {
@@ -52,6 +57,7 @@ namespace DN.BookStore.Books
             return await _bookAppService.GetListAsync(input);
         }
 
+        [Authorize(BookStorePermissions.Books.Edit)]
         [HttpPut]
         public async Task UpdateAsync(Guid id, [FromBody] CreateUpdateBookDto input)
         {
