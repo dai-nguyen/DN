@@ -9,19 +9,19 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DN.Domain\DN.Domain.csproj" />
-    <PackageReference Include="Volo.Abp.EntityFrameworkCore.PostgreSql" Version="7.1.1" />
-    <PackageReference Include="Volo.Abp.PermissionManagement.EntityFrameworkCore" Version="7.1.1" />
-    <PackageReference Include="Volo.Abp.SettingManagement.EntityFrameworkCore" Version="7.1.1" />
-    <PackageReference Include="Volo.Abp.Identity.EntityFrameworkCore" Version="7.1.1" />
-    <PackageReference Include="Volo.Abp.BackgroundJobs.EntityFrameworkCore" Version="7.1.1" />
-    <PackageReference Include="Volo.Abp.AuditLogging.EntityFrameworkCore" Version="7.1.1" />
-    <PackageReference Include="Volo.Abp.TenantManagement.EntityFrameworkCore" Version="7.1.1" />
-    <PackageReference Include="Volo.Abp.FeatureManagement.EntityFrameworkCore" Version="7.1.1" />
-    <PackageReference Include="Volo.Abp.OpenIddict.EntityFrameworkCore" Version="7.1.1" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.PostgreSql" Version="7.3.2" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.EntityFrameworkCore" Version="7.3.2" />
+    <PackageReference Include="Volo.Abp.SettingManagement.EntityFrameworkCore" Version="7.3.2" />
+    <PackageReference Include="Volo.Abp.Identity.EntityFrameworkCore" Version="7.3.2" />
+    <PackageReference Include="Volo.Abp.BackgroundJobs.EntityFrameworkCore" Version="7.3.2" />
+    <PackageReference Include="Volo.Abp.AuditLogging.EntityFrameworkCore" Version="7.3.2" />
+    <PackageReference Include="Volo.Abp.TenantManagement.EntityFrameworkCore" Version="7.3.2" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.EntityFrameworkCore" Version="7.3.2" />
+    <PackageReference Include="Volo.Abp.OpenIddict.EntityFrameworkCore" Version="7.3.2" />
   <ProjectReference Include="..\..\modules\DN.BookStore\src\DN.BookStore.EntityFrameworkCore\DN.BookStore.EntityFrameworkCore.csproj" /></ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.1">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.10">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>

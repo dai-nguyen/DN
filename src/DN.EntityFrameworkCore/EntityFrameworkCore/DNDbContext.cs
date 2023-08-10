@@ -51,6 +51,8 @@ public class DNDbContext :
     public DbSet<Tenant> Tenants { get; set; }
     public DbSet<TenantConnectionString> TenantConnectionStrings { get; set; }
 
+    public DbSet<IdentityUserDelegation> UserDelegations { get; set; } //=> throw new System.NotImplementedException();
+
     #endregion
 
     public DNDbContext(DbContextOptions<DNDbContext> options)
