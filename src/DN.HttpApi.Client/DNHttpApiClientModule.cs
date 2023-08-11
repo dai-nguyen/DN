@@ -8,6 +8,7 @@ using Volo.Abp.TenantManagement;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.VirtualFileSystem;
 using DN.BookStore;
+using DN.CRM;
 
 namespace DN;
 
@@ -21,6 +22,7 @@ namespace DN;
     typeof(AbpSettingManagementHttpApiClientModule)
 )]
 [DependsOn(typeof(BookStoreHttpApiClientModule))]
+    [DependsOn(typeof(CRMHttpApiClientModule))]
     public class DNHttpApiClientModule : AbpModule
 {
     public const string RemoteServiceName = "Default";

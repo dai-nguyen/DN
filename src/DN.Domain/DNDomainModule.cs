@@ -15,6 +15,7 @@ using Volo.Abp.PermissionManagement.OpenIddict;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
 using DN.BookStore;
+using DN.CRM;
 
 namespace DN;
 
@@ -32,6 +33,7 @@ namespace DN;
     typeof(AbpEmailingModule)
 )]
 [DependsOn(typeof(BookStoreDomainModule))]
+    [DependsOn(typeof(CRMDomainModule))]
     public class DNDomainModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)

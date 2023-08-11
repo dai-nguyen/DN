@@ -13,6 +13,7 @@ using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
 using DN.BookStore.EntityFrameworkCore;
+using DN.CRM.EntityFrameworkCore;
 
 namespace DN.EntityFrameworkCore;
 
@@ -85,5 +86,6 @@ public class DNDbContext :
         //    //...
         //});
         builder.ConfigureBookStore();
+            builder.ConfigureCRM();
         }
 }

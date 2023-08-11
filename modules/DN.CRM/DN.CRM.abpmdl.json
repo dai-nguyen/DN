@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "DN.CRM.Domain.Shared": {
+      "path": "src/DN.CRM.Domain.Shared/DN.CRM.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "DN.CRM.Domain": {
+      "path": "src/DN.CRM.Domain/DN.CRM.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "DN.CRM.Application.Contracts": {
+      "path": "src/DN.CRM.Application.Contracts/DN.CRM.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "DN.CRM.Application": {
+      "path": "src/DN.CRM.Application/DN.CRM.Application.abppkg.json",
+      "folder": "src"
+    },
+    "DN.CRM.EntityFrameworkCore": {
+      "path": "src/DN.CRM.EntityFrameworkCore/DN.CRM.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "DN.CRM.MongoDB": {
+      "path": "src/DN.CRM.MongoDB/DN.CRM.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "DN.CRM.HttpApi": {
+      "path": "src/DN.CRM.HttpApi/DN.CRM.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "DN.CRM.HttpApi.Client": {
+      "path": "src/DN.CRM.HttpApi.Client/DN.CRM.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "DN.CRM.TestBase": {
+      "path": "test/DN.CRM.TestBase/DN.CRM.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "DN.CRM.EntityFrameworkCore.Tests": {
+      "path": "test/DN.CRM.EntityFrameworkCore.Tests/DN.CRM.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "DN.CRM.MongoDB.Tests": {
+      "path": "test/DN.CRM.MongoDB.Tests/DN.CRM.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "DN.CRM.Domain.Tests": {
+      "path": "test/DN.CRM.Domain.Tests/DN.CRM.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "DN.CRM.Application.Tests": {
+      "path": "test/DN.CRM.Application.Tests/DN.CRM.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "DN.CRM.HttpApi.Host": {
+      "path": "host/DN.CRM.HttpApi.Host/DN.CRM.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "DN.CRM.Web": {
+      "path": "src/DN.CRM.Web/DN.CRM.Web.abppkg.json",
+      "folder": "src"
+    },
+    "DN.CRM.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/DN.CRM.HttpApi.Client.ConsoleTestApp/DN.CRM.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "DN.CRM.Web.Host": {
+      "path": "host/DN.CRM.Web.Host/DN.CRM.Web.Host.abppkg.json",
+      "folder": "host"
+    },
+    "DN.CRM.AuthServer": {
+      "path": "host/DN.CRM.AuthServer/DN.CRM.AuthServer.abppkg.json",
+      "folder": "host"
+    },
+    "DN.CRM.Host.Shared": {
+      "path": "host/DN.CRM.Host.Shared/DN.CRM.Host.Shared.abppkg.json",
+      "folder": "host"
+    },
+    "DN.CRM.Web.Unified": {
+      "path": "host/DN.CRM.Web.Unified/DN.CRM.Web.Unified.abppkg.json",
+      "folder": "host"
+    },
+    "DN.CRM.Blazor": {
+      "path": "src/DN.CRM.Blazor/DN.CRM.Blazor.abppkg.json",
+      "folder": "src"
+    },
+    "DN.CRM.Blazor.Host": {
+      "path": "host/DN.CRM.Blazor.Host/DN.CRM.Blazor.Host.abppkg.json",
+      "folder": "host"
+    },
+    "DN.CRM.Blazor.Server": {
+      "path": "src/DN.CRM.Blazor.Server/DN.CRM.Blazor.Server.abppkg.json",
+      "folder": "src"
+    },
+    "DN.CRM.Blazor.WebAssembly": {
+      "path": "src/DN.CRM.Blazor.WebAssembly/DN.CRM.Blazor.WebAssembly.abppkg.json",
+      "folder": "src"
+    },
+    "DN.CRM.Blazor.Server.Host": {
+      "path": "host/DN.CRM.Blazor.Server.Host/DN.CRM.Blazor.Server.Host.abppkg.json",
+      "folder": "host"
+    }
+  }
+}

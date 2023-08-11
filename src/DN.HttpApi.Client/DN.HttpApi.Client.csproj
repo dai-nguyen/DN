@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\common.props" />
 
@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DN.Application.Contracts\DN.Application.Contracts.csproj" />
-  <ProjectReference Include="..\..\modules\DN.BookStore\src\DN.BookStore.HttpApi.Client\DN.BookStore.HttpApi.Client.csproj" /></ItemGroup>
+  <ProjectReference Include="..\..\modules\DN.BookStore\src\DN.BookStore.HttpApi.Client\DN.BookStore.HttpApi.Client.csproj" /><ProjectReference Include="..\..\modules\DN.CRM\src\DN.CRM.HttpApi.Client\DN.CRM.HttpApi.Client.csproj" /></ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Account.HttpApi.Client" Version="7.3.2" />

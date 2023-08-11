@@ -13,6 +13,7 @@ using Volo.Abp.TenantManagement;
 using Volo.Abp.Validation.Localization;
 using Volo.Abp.VirtualFileSystem;
 using DN.BookStore;
+using DN.CRM;
 
 namespace DN;
 
@@ -27,6 +28,7 @@ namespace DN;
     typeof(AbpTenantManagementDomainSharedModule)    
     )]
 [DependsOn(typeof(BookStoreDomainSharedModule))]
+    [DependsOn(typeof(CRMDomainSharedModule))]
     public class DNDomainSharedModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)

@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DN.Application.Contracts\DN.Application.Contracts.csproj" />
-  <ProjectReference Include="..\..\modules\DN.BookStore\src\DN.BookStore.HttpApi\DN.BookStore.HttpApi.csproj" /></ItemGroup>
+  <ProjectReference Include="..\..\modules\DN.BookStore\src\DN.BookStore.HttpApi\DN.BookStore.HttpApi.csproj" /><ProjectReference Include="..\..\modules\DN.CRM\src\DN.CRM.HttpApi\DN.CRM.HttpApi.csproj" /></ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Account.HttpApi" Version="7.3.2" />

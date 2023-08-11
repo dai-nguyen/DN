@@ -7,6 +7,7 @@ using Volo.Abp.PermissionManagement;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
 using DN.BookStore;
+using DN.CRM;
 
 namespace DN;
 
@@ -21,6 +22,7 @@ namespace DN;
     typeof(AbpObjectExtendingModule)
 )]
 [DependsOn(typeof(BookStoreApplicationContractsModule))]
+    [DependsOn(typeof(CRMApplicationContractsModule))]
     public class DNApplicationContractsModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)

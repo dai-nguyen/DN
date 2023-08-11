@@ -12,7 +12,7 @@
     <PackageReference Include="Blazorise.Icons.FontAwesome" Version="1.2.5" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.10" />
-  <ProjectReference Include="..\..\modules\DN.BookStore\src\DN.BookStore.Blazor.WebAssembly\DN.BookStore.Blazor.WebAssembly.csproj" /></ItemGroup>
+  <ProjectReference Include="..\..\modules\DN.BookStore\src\DN.BookStore.Blazor.WebAssembly\DN.BookStore.Blazor.WebAssembly.csproj" /><ProjectReference Include="..\..\modules\DN.CRM\src\DN.CRM.Blazor.WebAssembly\DN.CRM.Blazor.WebAssembly.csproj" /></ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.AspNetCore.Components.WebAssembly.LeptonXLiteTheme" Version="2.3.2" />

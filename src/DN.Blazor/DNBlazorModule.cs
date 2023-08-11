@@ -18,6 +18,7 @@ using Volo.Abp.Identity.Blazor.WebAssembly;
 using Volo.Abp.SettingManagement.Blazor.WebAssembly;
 using Volo.Abp.TenantManagement.Blazor.WebAssembly;
 using DN.BookStore.Blazor.WebAssembly;
+using DN.CRM.Blazor.WebAssembly;
 
 namespace DN.Blazor;
 
@@ -30,6 +31,7 @@ namespace DN.Blazor;
     typeof(AbpSettingManagementBlazorWebAssemblyModule)
 )]
 [DependsOn(typeof(BookStoreBlazorWebAssemblyModule))]
+    [DependsOn(typeof(CRMBlazorWebAssemblyModule))]
     public class DNBlazorModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)

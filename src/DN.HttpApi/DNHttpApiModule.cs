@@ -9,6 +9,7 @@ using Volo.Abp.PermissionManagement.HttpApi;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
 using DN.BookStore;
+using DN.CRM;
 
 namespace DN;
 
@@ -22,6 +23,7 @@ namespace DN;
     typeof(AbpSettingManagementHttpApiModule)
     )]
 [DependsOn(typeof(BookStoreHttpApiModule))]
+    [DependsOn(typeof(CRMHttpApiModule))]
     public class DNHttpApiModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)

@@ -12,6 +12,7 @@ using Volo.Abp.OpenIddict.EntityFrameworkCore;
 using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
+using DN.CRM.EntityFrameworkCore;
 
 namespace DN.EntityFrameworkCore;
 
@@ -28,6 +29,7 @@ namespace DN.EntityFrameworkCore;
     typeof(AbpFeatureManagementEntityFrameworkCoreModule)
     )]
 [DependsOn(typeof(BookStoreEntityFrameworkCoreModule))]
+    [DependsOn(typeof(CRMEntityFrameworkCoreModule))]
     public class DNEntityFrameworkCoreModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)

@@ -10,7 +10,7 @@
   <ItemGroup>
     <ProjectReference Include="..\DN.Domain\DN.Domain.csproj" />
     <ProjectReference Include="..\DN.Application.Contracts\DN.Application.Contracts.csproj" />
-  <ProjectReference Include="..\..\modules\DN.BookStore\src\DN.BookStore.Application\DN.BookStore.Application.csproj" /></ItemGroup>
+  <ProjectReference Include="..\..\modules\DN.BookStore\src\DN.BookStore.Application\DN.BookStore.Application.csproj" /><ProjectReference Include="..\..\modules\DN.CRM\src\DN.CRM.Application\DN.CRM.Application.csproj" /></ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Account.Application" Version="7.3.2" />

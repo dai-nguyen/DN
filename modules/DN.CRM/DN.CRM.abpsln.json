@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "DN.CRM": {
+      "path": "DN.CRM.abpmdl.json"
+    }
+  }
+}
