@@ -34,6 +34,7 @@ namespace DN.CRM.Customers
             SetName(name);
             SetStreet1(street1);
             SetStreet2(street2);
+            SetCity(city);
         }
 
         private void SetName([NotNull] string name)
@@ -59,5 +60,15 @@ namespace DN.CRM.Customers
                 nameof(street2),
                 maxLength: CustomerConsts.MaxAddressLength);
         }
+
+        private void SetCity([CanBeNull] string city)
+        {
+            City = Check.Length(
+                city,
+                nameof(city),
+                maxLength: CustomerConsts.MaxCityLength);
+        }
+
+
     }
 }
