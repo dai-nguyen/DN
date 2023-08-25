@@ -6,9 +6,10 @@
         public const int MaxAddressLength = 100;
         public const int MaxCityLength = 64;
         public const int MaxCountryLength = 2;
-        public const int MaxZip = 10;
-        public const int MaxPhone = 64;
-        public const int MaxEmail = 64;
-        public const int MaxURL = 64;
+        public const int MaxStateLength = 2;
+        public const int MaxZipLength = 10;
+        public const int MaxPhoneLength = 64;
+        public const int MaxEmailLength = 64;
+        public const int MaxUrlLength = 64;
     }
 }

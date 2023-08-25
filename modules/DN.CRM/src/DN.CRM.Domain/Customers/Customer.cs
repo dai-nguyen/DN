@@ -11,8 +11,8 @@ namespace DN.CRM.Customers
         public string Street1 { get; set; }
         public string Street2 { get; set; }
         public string City { get; set; }
-        public string Zip { get; set; }
-        public string State { get; set; }        
+        public string State { get; set; }
+        public string Zip { get; set; }        
         public string Country { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
@@ -35,40 +35,92 @@ namespace DN.CRM.Customers
             SetStreet1(street1);
             SetStreet2(street2);
             SetCity(city);
+            SetZip(zip);
+            SetState(state);
+            SetCountry(country);
+            SetPhone(phone);
+            SetEmail(email);
+            SetUrl(url);
         }
-
-        private void SetName([NotNull] string name)
+        
+        void SetName([NotNull] string val)
         {
             Name = Check.NotNullOrWhiteSpace(
-                name,
-                nameof(name),
+                val,
+                nameof(Name),
                 maxLength: CustomerConsts.MaxNameLength);
         }
 
-        private void SetStreet1([CanBeNull] string street1)
+        void SetStreet1([CanBeNull] string val)
         {
             Street1 = Check.Length(
-                street1, 
-                nameof(street1), 
+                val, 
+                nameof(Street1), 
                 maxLength: CustomerConsts.MaxAddressLength);
         }
 
-        private void SetStreet2([CanBeNull] string street2)
+        void SetStreet2([CanBeNull] string val)
         {
             Street1 = Check.Length(
-                street2,
-                nameof(street2),
+                val,
+                nameof(Street2),
                 maxLength: CustomerConsts.MaxAddressLength);
         }
 
-        private void SetCity([CanBeNull] string city)
+        void SetCity([CanBeNull] string val)
         {
             City = Check.Length(
-                city,
-                nameof(city),
+                val,
+                nameof(City),
                 maxLength: CustomerConsts.MaxCityLength);
         }
 
+        void SetZip([CanBeNull] string val)
+        {
+            Zip = Check.Length(
+                val,
+                nameof(Zip),
+                maxLength: CustomerConsts.MaxZip);
+        }
 
+        void SetState([CanBeNull] string val)
+        {
+            State = Check.Length(
+                val,
+                nameof(State),
+                maxLength: CustomerConsts.MaxStateLength);
+        }
+
+        void SetCountry([CanBeNull] string val)
+        {
+            Country = Check.Length(
+                val,
+                nameof(Country),
+                maxLength: CustomerConsts.MaxCountryLength);
+        }
+
+        void SetPhone([CanBeNull] string val)
+        {
+            Phone = Check.Length(
+                val,
+                nameof(Phone),
+                maxLength: CustomerConsts.MaxPhoneLength);
+        }
+
+        void SetEmail([CanBeNull] string val)
+        {
+            Email = Check.Length(
+                val,
+                nameof(Email),
+                maxLength: CustomerConsts.MaxEmailLength);
+        }
+
+        private void SetUrl(string val)
+        {
+            URL = Check.Length(
+                val,
+                nameof(URL),
+                maxLength: CustomerConsts.MaxUrlLength);
+        }
     }
 }
