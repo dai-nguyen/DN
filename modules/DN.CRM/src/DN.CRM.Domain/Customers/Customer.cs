@@ -80,7 +80,7 @@ namespace DN.CRM.Customers
             Zip = Check.Length(
                 val,
                 nameof(Zip),
-                maxLength: CustomerConsts.MaxZip);
+                maxLength: CustomerConsts.MaxZipLength);
         }
 
         void SetState([CanBeNull] string val)
