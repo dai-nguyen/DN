@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DN.CRM.Contacts
+﻿namespace DN.CRM.Contacts
 {
-    internal class ContactConsts
+    public static class ContactConsts
     {
+        public const int MaxFirstNameLength = 64;
+        public const int MaxLastNameLength = 64;
+        public const int MaxEmailLength = 128;
+        public const int MaxPhoneLength = 64;
     }
 }

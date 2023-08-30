@@ -3,7 +3,7 @@
     public static class CustomerConsts
     {
         public const int MaxNameLength = 64;
-        public const int MaxAddressLength = 100;
+        public const int MaxAddressLength = 128;
         public const int MaxCityLength = 64;
         public const int MaxCountryLength = 2;
         public const int MaxStateLength = 2;
