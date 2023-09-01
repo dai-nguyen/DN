@@ -23,4 +23,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Customers\" />
+    <Folder Include="Projects\" />
+  </ItemGroup>
+
 </Project>

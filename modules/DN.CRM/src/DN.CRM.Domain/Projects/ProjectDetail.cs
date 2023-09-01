@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
+using Volo.Abp;
 using Volo.Abp.Domain.Entities.Auditing;
 
 namespace DN.CRM.Projects
@@ -15,5 +17,30 @@ namespace DN.CRM.Projects
         public ProjectDifficulty Difficulty { get; set; }
 
         public string AssignedToId { get; set; }
+
+        internal ProjectDetail(
+            Guid id,
+            [NotNull] string name,
+            [NotNull] string description) 
+        { 
+            SetName(name);
+            SetDescription(description);
+        }
+
+        void SetName([NotNull] string val)
+        {
+            Name = Check.NotNullOrWhiteSpace(
+                val,
+                nameof(Name),
+                maxLength: ProjectDetailConsts.MaxNameLength);
+        }
+
+        void SetDescription([NotNull] string val)
+        {
+            Description = Check.NotNullOrWhiteSpace(
+                val,
+                nameof(Description),
+                maxLength: ProjectDetailConsts.MaxDescriptionLength);
+        }
     }
 }
